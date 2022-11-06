@@ -1,21 +1,14 @@
-package com.github.knextsunj.recommendationservice.service.impl;
+package com.github.knextsunj.recommendationservice.recommendationservice.service.impl;
 
-import com.github.knextsunj.recommendationservice.domain.Recommendation;
-import com.github.knextsunj.recommendationservice.dto.RecommendationDTO;
-import com.github.knextsunj.recommendationservice.dto.mapper.RecommendationMapper;
-import com.github.knextsunj.recommendationservice.exception.InvalidInputException;
-import com.github.knextsunj.recommendationservice.repository.RecommendationRepository;
-import com.github.knextsunj.recommendationservice.service.RecommendationService;
+import com.github.knextsunj.recommendationservice.recommendationservice.dto.RecommendationDTO;
+import com.github.knextsunj.recommendationservice.recommendationservice.service.RecommendationService;
+import com.github.knextsunj.recommendationservice.util.ServiceUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
-import com.github.knextsunj.recommendationservice.util.ServiceUtil;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @RestController
 public class RecommendationServiceImpl implements RecommendationService {
@@ -24,15 +17,9 @@ public class RecommendationServiceImpl implements RecommendationService {
 
     private final ServiceUtil serviceUtil;
 
-    private final RecommendationRepository repository;
-
-    private final RecommendationMapper mapper;
-
     @Autowired
-    public RecommendationServiceImpl(RecommendationRepository repository, RecommendationMapper mapper,ServiceUtil serviceUtil) {
+    public RecommendationServiceImpl(ServiceUtil serviceUtil) {
         this.serviceUtil = serviceUtil;
-        this.repository = repository;
-        this.mapper = mapper;
     }
 
     @Override
@@ -53,9 +40,7 @@ public class RecommendationServiceImpl implements RecommendationService {
 //
 //        return list;
 //    }
-        List<Recommendation> recommendations = repository.findByProductId(productId);
-        Function<Recommendation,RecommendationDTO> function = recommendation -> mapper.toRecommendationDTO(recommendation);
-        return recommendations.parallelStream().map(function).collect(Collectors.toList());
+        return null;
     }
 
     /**
@@ -70,8 +55,7 @@ public class RecommendationServiceImpl implements RecommendationService {
      */
     @Override
     public RecommendationDTO createRecommendation(RecommendationDTO body) {
-        Recommendation recommendation = repository.save(mapper.fromRecommendationDTO(body));
-        return mapper.toRecommendationDTO(recommendation);
+        return null;
     }
 
     /**
@@ -83,6 +67,6 @@ public class RecommendationServiceImpl implements RecommendationService {
      */
     @Override
     public void deleteRecommendations(int productId) {
-        repository.deleteAll(repository.findByProductId(productId));
+
     }
 }

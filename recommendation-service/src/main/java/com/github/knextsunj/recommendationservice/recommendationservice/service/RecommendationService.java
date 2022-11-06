@@ -1,7 +1,6 @@
-package com.github.knextsunj.recommendationservice.service;
+package com.github.knextsunj.recommendationservice.recommendationservice.service;
 
-import com.github.knextsunj.recommendationservice.domain.Recommendation;
-import com.github.knextsunj.recommendationservice.dto.RecommendationDTO;
+import com.github.knextsunj.recommendationservice.recommendationservice.dto.RecommendationDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -11,15 +11,26 @@ import lombok.ToString;
 @ToString
 public class RecommendationSummary {
 
-    private long recommendationId;
+    private final long recommendationId;
     private final String author;
-    private long rate;
+    private final long rate;
+    private final String content;
 
-    public RecommendationSummary(long recommendationId, String author, long rate) {
+    public RecommendationSummary() {
+        this.recommendationId = 0L;
+        this.author = null;
+        this.rate = 0L;
+        this.content = null;
+    }
+
+    public RecommendationSummary(long recommendationId, String author, long rate, String content) {
         this.recommendationId = recommendationId;
         this.author = author;
         this.rate = rate;
+        this.content = content;
     }
+
+
 
 
 }

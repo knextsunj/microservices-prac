@@ -1,8 +1,8 @@
 package com.github.knextsunj.recommendationservice.util;
 
 
-import com.github.knextsunj.recommendationservice.exception.InvalidInputException;
-import com.github.knextsunj.recommendationservice.exception.NotFoundException;
+import com.github.knextsunj.reviewservice.exception.InvalidInputException;
+import com.github.knextsunj.reviewservice.exception.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

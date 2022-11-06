@@ -11,18 +11,18 @@ import javax.persistence.*;
 @Setter
 @EqualsAndHashCode
 @ToString
-//@Entity
-//@Table(name = "product")
+@Entity
+@Table(name = "product")
 public class Product {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id", nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-//    @Column(name = "name")
+    @Column(name = "name")
     private String name;
 
-//    @Column(name = "weight")
+    @Column(name = "weight")
     private long weight;
 
     private final String serviceAddress;

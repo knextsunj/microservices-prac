@@ -27,7 +27,7 @@ public class Review {
         serviceAddress = null;
     }
 
-    public Review(int productId, int reviewId, String author, String subject, String content, String serviceAddress) {
+    public Review(long productId, long reviewId, String author, String subject, String content, String serviceAddress) {
         this.productId = productId;
         this.id = reviewId;
         this.author = author;

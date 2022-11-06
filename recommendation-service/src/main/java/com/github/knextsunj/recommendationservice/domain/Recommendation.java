@@ -5,20 +5,29 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.*;
+
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
+@Entity
+@Table(name = "recommendation")
 public class Recommendation {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private long id;
 
+    @Column(name = "product_id")
     private long productId;
-
+    @Column(name = "author")
     private String author;
 
+    @Column(name = "rate")
     private long rate;
 
+    @Column(name = "content")
     private String content;
 
     private String serviceAddress;

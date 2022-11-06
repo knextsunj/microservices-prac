@@ -11,14 +11,23 @@ import lombok.ToString;
 @ToString
 public class ReviewSummary {
 
-    private long reviewId;
-    private String author;
-    private String subject;
+    private final long reviewId;
+    private final String author;
+    private final String subject;
+    private final String content;
 
-    public ReviewSummary(long reviewId, String author, String subject) {
+    public ReviewSummary() {
+        this.reviewId = 0L;
+        this.author = null;
+        this.subject = null;
+        this.content = null;
+    }
+
+    public ReviewSummary(long reviewId, String author, String subject, String content) {
         this.reviewId = reviewId;
         this.author = author;
         this.subject = subject;
+        this.content = content;
     }
 
 
